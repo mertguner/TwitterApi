@@ -6,29 +6,29 @@ Twitter apisini kullanabilmek için öncelikle onaylanmış bir developer hesab�
 ## Twitter Developer Ayarları
  - [Twitter Developer](https://developer.twitter.com/)'a twitter hesabınız ile login olmalısınız.
 - Yeni bir uygulama kaydetmek için App sekmesine girip.
-![03](03 - Twitter Api Add.PNG)
+![03](https://github.com/mertguner/TwitterApi/raw/master/Images/03%20-%20Twitter%20Api%20Add.PNG)
 - **Create an App** tuşuna basarak Yeni bir uygulama yaratılmalı.
-![04](04 - Create an App.PNG)
+![04](https://github.com/mertguner/TwitterApi/raw/master/Images/04%20-%20Create%20an%20App.PNG)
   - Yeni bir uygulama yaratırken ***(required)*** yazan bütün alanların doldurulması özellikle önemli.
   - Güvenlik için **Enable Sign in with Twitter** işaretlenir ve **Callback URLs** linkleri girlmelidir. Kullandığımız uygulamada twitter api tanımı yapılan endpoint ile webhook tanımı yapıldı.
-![05](05 - CallbackUrl.PNG)
+![05](https://github.com/mertguner/TwitterApi/raw/master/Images/05%20-%20CallbackUrl.PNG)
 - 1 gün içerisinde Twitter'dan mail ile ya ekstra bilgi istenir yada developer hesabınız onaylanır.
 - Sonraki adım uygulamamızın yetki ayarları. **Permissions** ben full yetki vererek "*Read, write, and Direct Messages*" seçtim. 
-![06](06 - Permission.PNG)
+![06](https://github.com/mertguner/TwitterApi/raw/master/Images/06%20-%20Permission.PNG)
 -Tokenlarımızı alarak artık Postman üzerinden kullanmaya başlayabiliriz. Bu aşamada dikkat edilmesi gereken nokta Access tokenlar bir kere gösterilir. Kenara not almayı unutmayın.
-![07](07 - Token.PNG)
+![07](https://github.com/mertguner/TwitterApi/raw/master/Images/07%20-%20Token.PNG)
 - Webhook kaydedebilmek için bir environment yaratmak gerekiyor. Bunun için **Dev Environment**'a girip. ***Account Activity API*** 'ye sandbox tanımlamak ve bir Environment Adı vermemiz gerekiyor. Webhook kaydederken bu *Environment Name* işimize yarayacak.
-![03](03 - Twitter Api Add.PNG)
+![03](https://github.com/mertguner/TwitterApi/raw/master/Images/03%20-%20Twitter%20Api%20Add.PNG)
   - ben bütün uygulamalara aynı ismi verdim. Sandbox bedava kullanım için yapıldığından 1 webhook'a izin veriyor. O yüzden hepsini aynı isimle verdim.
-![08](08 - Dev Environments.PNG)
+![08](https://github.com/mertguner/TwitterApi/raw/master/Images/08%20-%20Dev%20Environments.PNG)
 
 ## Postman Ayarları
 - Api tokenlarını yönetmek için Postman üzerinden bir environment tanımı yaptım. 
-  - [Download Postman Environments](Twitter%20API.postman_environment.json)
- ![01](01 - Add Environment.PNG)
+  - [Download Postman Environments](https://raw.githubusercontent.com/mertguner/TwitterApi/master/Postman/Twitter%20API.postman_environment.json)
+ ![01](https://github.com/mertguner/TwitterApi/raw/master/Images/01%20-%20Add%20Environment.PNG)
 - İhtiyacım olan Api referanslarını da aşağıdaki collection'da topladım.
-  - [Download Twitter Postman Collection](TwitterApi.postman_collection.json)
- ![02](02 - Twitter Apis.PNG)
+  - [Download Twitter Postman Collection](https://raw.githubusercontent.com/mertguner/TwitterApi/master/Postman/TwitterApi.postman_collection.json)
+ ![02](https://github.com/mertguner/TwitterApi/raw/master/Images/02%20-%20Twitter%20Apis.PNG)
  
  ## Twitter API
 - Tweet Göndermek için 
