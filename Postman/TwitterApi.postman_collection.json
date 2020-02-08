@@ -1,0 +1,731 @@
+{
+	"info": {
+		"_postman_id": "a80bc314-3e79-4ed6-a925-06867243b6f6",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Direct Message",
+			"item": [
+				{
+					"name": "Create DM",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"event\": {\r\n  \"type\": \"message_create\",\r\n  \"message_create\": {\r\n    \"target\": {\r\n      \"recipient_id\": \"78054600\"\r\n    },\r\n    \"message_data\": {\r\n      \"text\": \"Api ile DM Başlatma Testi\"\r\n    }\r\n  }\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/direct_messages/events/new.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"direct_messages",
+								"events",
+								"new.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get DM",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/direct_messages/events/show.json?id=1224726679542816772",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"direct_messages",
+								"events",
+								"show.json"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1224726679542816772"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get DM List",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/direct_messages/events/list.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"direct_messages",
+								"events",
+								"list.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tweet",
+			"item": [
+				{
+					"name": "Destroy",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/statuses/destroy/1216630397913718784.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"statuses",
+								"destroy",
+								"1216630397913718784.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Timeline",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/statuses/home_timeline.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"statuses",
+								"home_timeline.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Tweet",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/statuses/update.json?status=Hello Test",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"statuses",
+								"update.json"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "Hello Test"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Webhook",
+			"item": [
+				{
+					"name": "Get Webhooks",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer AAAAAAAAAAAAAAAAAAAAAL%2FvCAEAAAAAIuuJyZEd%2Bvg8zEWUGOlpXO3ZmyA%3DgDIuCb8fGXFxeW6kqs0FMpnrHumrLv5N06QTPvZHXN1J1UYAhf",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/account_activity/all/webhooks.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"account_activity",
+								"all",
+								"webhooks.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Webhook",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "url",
+									"value": "https://www.YourSite.com/Twitter/Hook",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/account_activity/all/{{ENV_NAME}}/webhooks.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"account_activity",
+								"all",
+								"{{ENV_NAME}}",
+								"webhooks.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Webhook subscriptions",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "tokenSecret",
+									"value": "{{ACCESS_TOKEN_SECRET}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerSecret",
+									"value": "{{API_SECRET_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "{{API_KEY}}",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/account_activity/all/ChatSuit/subscriptions.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"account_activity",
+								"all",
+								"ChatSuit",
+								"subscriptions.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Webhook",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/account_activity/all/{{ENV_NAME}}/webhooks/1224241961437212676.json",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"account_activity",
+								"all",
+								"{{ENV_NAME}}",
+								"webhooks",
+								"1224241961437212676.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Bearer Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{API_SECRET_KEY}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{API_KEY}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth2/token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
