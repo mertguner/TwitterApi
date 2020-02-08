@@ -6,7 +6,9 @@ Twitter apisini kullanabilmek için öncelikle onaylanmış bir developer hesab�
 ## Twitter Developer Ayarları
  - [Twitter Developer](https://developer.twitter.com/)'a twitter hesabınız ile login olmalısınız.
 - Yeni bir uygulama kaydetmek için App sekmesine girip.
-![03](https://github.com/mertguner/TwitterApi/raw/master/Images/03%20-%20Twitter%20Api%20Add.PNG)
+<p align="center">
+  <img src="https://github.com/mertguner/TwitterApi/raw/master/Images/03%20-%20Twitter%20Api%20Add.PNG" width="350" title="hover text">
+</p>
 - **Create an App** tuşuna basarak Yeni bir uygulama yaratılmalı.
 ![04](https://github.com/mertguner/TwitterApi/raw/master/Images/04%20-%20Create%20an%20App.PNG)
   - Yeni bir uygulama yaratırken ***(required)*** yazan bütün alanların doldurulması özellikle önemli.
